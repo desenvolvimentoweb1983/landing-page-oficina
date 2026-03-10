@@ -1,0 +1,320 @@
+*{
+box-sizing:border-box;
+}
+
+body{
+
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f4f4;
+color:#333;
+
+}
+
+
+/* TOPO */
+
+.topbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:#111;
+color:white;
+
+}
+
+.logo{
+
+font-size:20px;
+font-weight:bold;
+
+}
+
+.btn-topo{
+
+background:#ff3b3b;
+color:white;
+padding:10px 18px;
+border-radius:5px;
+text-decoration:none;
+
+}
+
+
+/* HERO */
+
+.hero{
+
+height:520px;
+background:url("img/oficina1.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+position:relative;
+
+}
+
+.hero::after{
+
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+
+}
+
+.hero-content{
+
+position:relative;
+z-index:2;
+max-width:600px;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:18px;
+margin:20px 0;
+
+}
+
+.btn-principal{
+
+background:#ff3b3b;
+color:white;
+padding:16px 30px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+
+/* SEÇÕES */
+
+section{
+
+padding:60px 20px;
+background:white;
+margin-bottom:10px;
+
+}
+
+h2{
+
+text-align:center;
+margin-bottom:40px;
+
+}
+
+
+/* SERVIÇOS */
+
+.grid-servicos{
+
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+
+}
+
+.servico-card{
+
+background:white;
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:.3s;
+
+}
+
+.servico-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.servico-card img{
+
+width:100%;
+height:160px;
+object-fit:cover;
+
+}
+
+.servico-card h3{
+
+padding:10px;
+margin:0;
+
+}
+
+.servico-card p{
+
+padding:0 10px 15px;
+
+}
+
+
+/* VEÍCULOS */
+
+.grid-veiculos{
+
+max-width:800px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:20px;
+
+}
+
+.veiculo-card{
+
+text-align:center;
+background:#f5f5f5;
+padding:25px;
+border-radius:8px;
+
+}
+
+.veiculo-card img{
+
+width:70px;
+margin-bottom:10px;
+
+}
+
+
+/* PASSOS */
+
+.passos{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+max-width:900px;
+margin:auto;
+
+}
+
+.passo{
+
+background:white;
+padding:25px;
+text-align:center;
+border-radius:8px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+
+}
+
+.numero{
+
+width:40px;
+height:40px;
+background:#ff3b3b;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+margin-bottom:10px;
+font-weight:bold;
+
+}
+
+
+/* GALERIA */
+
+.grid-galeria{
+
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+
+}
+
+.grid-galeria img{
+
+width:100%;
+border-radius:8px;
+
+}
+
+
+/* MAPA */
+
+.mapa iframe{
+
+width:100%;
+height:350px;
+border:0;
+
+}
+
+
+/* CONTATO */
+
+.contato{
+
+text-align:center;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+
+}
+
+
+/* WHATSAPP */
+
+.whatsapp{
+
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:16px 22px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 6px 15px rgba(0,0,0,.3);
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:28px;
+
+}
+
+}
