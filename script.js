@@ -8,7 +8,7 @@ telefone:"5519974082724",
 
 endereco:"Jaguariúna - SP",
 
-horario:"Segunda a Sexta - 8h às 18h",
+horario:"Segunda a Sexta - 16h às 22h",
 
 servicos:[
 
