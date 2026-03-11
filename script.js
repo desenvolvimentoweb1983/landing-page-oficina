@@ -4,7 +4,7 @@ nome:"Oficina Mecânica Jaguariúna",
 
 slogan:"Especialistas em manutenção automotiva com qualidade e confiança",
 
-telefone:"5511999999999",
+telefone:"5519974082724",
 
 endereco:"Jaguariúna - SP",
 
@@ -71,11 +71,8 @@ img:"img/utilitario.png"
 passos:[
 
 "Entre em contato pelo WhatsApp",
-
 "Realizamos diagnóstico do veículo",
-
 "Apresentamos orçamento para aprovação",
-
 "Serviço executado com garantia"
 
 ],
@@ -93,37 +90,59 @@ mapa:"https://www.google.com/maps?q=-22.7046106,-46.9924357&output=embed"
 }
 
 
+// TEXTOS PRINCIPAIS
 
-document.getElementById("tituloSite").innerText=cliente.nome
+document.getElementById("tituloSite").innerText = cliente.nome
+document.getElementById("nomeOficina").innerText = cliente.nome
+document.getElementById("tituloHero").innerText = cliente.nome
+document.getElementById("slogan").innerText = cliente.slogan
 
-document.getElementById("nomeOficina").innerText=cliente.nome
-
-document.getElementById("tituloHero").innerText=cliente.nome
-
-document.getElementById("slogan").innerText=cliente.slogan
-
-document.getElementById("telefone").innerText="Telefone: "+cliente.telefone
-
-document.getElementById("endereco").innerText=cliente.endereco
-
-document.getElementById("horario").innerText=cliente.horario
-
-
-document.getElementById("btnHero").href="https://wa.me/"+cliente.telefone
-document.getElementById("btnWhatsappTopo").href="https://wa.me/"+cliente.telefone
-document.getElementById("whatsappFixo").href="https://wa.me/"+cliente.telefone
+document.getElementById("telefone").innerText = "WhatsApp: (19) 97408-2724"
+document.getElementById("endereco").innerText = cliente.endereco
+document.getElementById("horario").innerText = cliente.horario
 
 
 
-const servicos=document.getElementById("listaServicos")
+// CONFIGURAÇÃO DO WHATSAPP
 
-cliente.servicos.forEach(s=>{
+const mensagem = "Olá! Vi seu site de oficina mecânica e gostaria de agendar um serviço.";
 
-const div=document.createElement("div")
+const linkWhatsApp =
+"https://wa.me/" + cliente.telefone + "?text=" + encodeURIComponent(mensagem)
 
-div.className="servico-card"
 
-div.innerHTML=`
+// TODOS OS BOTÕES DE WHATSAPP
+
+const botoesWhats = [
+"btnHero",
+"btnWhatsappTopo",
+"whatsappFixo"
+]
+
+botoesWhats.forEach(id => {
+
+const botao = document.getElementById(id)
+
+if(botao){
+botao.href = linkWhatsApp
+botao.target = "_blank"
+}
+
+})
+
+
+
+// SERVIÇOS
+
+const servicos = document.getElementById("listaServicos")
+
+cliente.servicos.forEach(s => {
+
+const div = document.createElement("div")
+
+div.className = "servico-card"
+
+div.innerHTML = `
 <img src="${s.img}">
 <h3>${s.titulo}</h3>
 <p>${s.desc}</p>
@@ -135,15 +154,17 @@ servicos.appendChild(div)
 
 
 
-const veiculos=document.getElementById("listaVeiculos")
+// VEÍCULOS
 
-cliente.veiculos.forEach(v=>{
+const veiculos = document.getElementById("listaVeiculos")
 
-const div=document.createElement("div")
+cliente.veiculos.forEach(v => {
 
-div.className="veiculo-card"
+const div = document.createElement("div")
 
-div.innerHTML=`
+div.className = "veiculo-card"
+
+div.innerHTML = `
 <img src="${v.img}">
 <h3>${v.nome}</h3>
 `
@@ -154,15 +175,17 @@ veiculos.appendChild(div)
 
 
 
-const passos=document.getElementById("listaPassos")
+// PROCESSO
 
-cliente.passos.forEach((p,i)=>{
+const passos = document.getElementById("listaPassos")
 
-const div=document.createElement("div")
+cliente.passos.forEach((p,i) => {
 
-div.className="passo"
+const div = document.createElement("div")
 
-div.innerHTML=`
+div.className = "passo"
+
+div.innerHTML = `
 <div class="numero">${i+1}</div>
 <p>${p}</p>
 `
@@ -173,21 +196,29 @@ passos.appendChild(div)
 
 
 
-const galeria=document.getElementById("listaFotos")
+// GALERIA
 
-cliente.fotos.forEach(f=>{
+const galeria = document.getElementById("listaFotos")
 
-const img=document.createElement("img")
+cliente.fotos.forEach(f => {
 
-img.src=f
+const img = document.createElement("img")
+
+img.src = f
 
 galeria.appendChild(img)
 
 })
 
 
-document.getElementById("mapa").src=cliente.mapa
+
+// MAPA
+
+document.getElementById("mapa").src = cliente.mapa
 
 
-document.getElementById("copyright").innerText=
-"© "+new Date().getFullYear()+" "+cliente.nome
+
+// COPYRIGHT
+
+document.getElementById("copyright").innerText =
+"© " + new Date().getFullYear() + " " + cliente.nome
